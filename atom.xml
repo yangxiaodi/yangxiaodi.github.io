@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yangxiaodi.com/"/>
-  <updated>2015-11-10T14:38:59.000Z</updated>
+  <updated>2015-11-10T14:41:40.000Z</updated>
   <id>http://yangxiaodi.com/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[20151105福建ctf学习]]></title>
+    <link href="http://yangxiaodi.com/2015/11/10/20151105%E7%A6%8F%E5%BB%BActf%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yangxiaodi.com/2015/11/10/20151105福建ctf学习/</id>
+    <published>2015-11-10T14:41:40.000Z</published>
+    <updated>2015-11-10T14:41:40.000Z</updated>
+    <content type="html"><![CDATA[<p>##收获的第一个方法<br>在遇到攻防赛的时候, 首先上防御机下载代码下来，在遇到web被拿分的时候,把那时候的web代码在下载一遍，然后用diff命令对比两个文件夹，看看有哪些地方改变了. </p>
+<pre><code>➜diff TCPDUMP TCPDUMP2    
+Binary files TCPDUMP/.DS_Store <span class="keyword">and</span> TCPDUMP2/.DS_Store differ
+Only <span class="keyword">in</span> TCPDUMP2: aaaa.gz
+Only <span class="keyword">in</span> TCPDUMP: tcpdump-<span class="number">4.7</span><span class="number">.4</span>.tar.gz
+diff TCPDUMP/tcpdump.sh TCPDUMP2/tcpdump.sh
+<span class="number">6</span>c6,<span class="number">9</span>
+&lt; done
+&gt;
+&gt; asasa
+&gt; sasaas
+\ No newline <span class="keyword">at</span> <span class="keyword">end</span> <span class="keyword">of</span> <span class="type">file</span>，
+</code></pre><hr>
+<p>可以到对比TCPDUMP 和TCPDUMP2,发现在TCODUMP2中有aaaa.gz,而在TCPDUMP中是没有的,所以这样能找出webshell,还有被更改的文件,新加的文件等等.<br>也写出了一个脚本<br><a href="https://github.com/yangxiaodi/diff.sh/issues/1" target="_blank" rel="external">https://github.com/yangxiaodi/diff.sh/issues/1</a></p>
+<p>##收获的第二个方法<br>防御机大部分是没有root权限的,我们可以尝试root防御机,毕竟做这个设置的也是人,也是管理员，尝试一下也未妨不可,打比赛比的就是黑客的思维嘛.平常要多收集exp等,多去尝试.你可以/etc/hosts 将flag机器的ip重定向到本地(:</p>
+<p>##总结<br>这次的比赛也有好多没做好的地方,比如第一题的编码题,见识还是太短,工具还是不熟练,所以第一题被困了好久，多练多涨见识.那题选择题也是很可惜的，后面发现可以用wifi连接，如果百度一下，那就保证不会做错了，还有上waf的速度太慢了，自己也太紧张了，居然连语句都忘了，简直脑子塞了一拖翔，如果上的快一些,那就不会被福州队从第二轮拿到最后一轮的，白白丢了100多分。还有应对wab题目的能力,没百度了没外网了该怎么办，从依赖有网到没网的时候能应付自如,那才厉害,在web中，遇到要破解的md5怎么办,都是一系列的问题。不要小看一些古老的技术，他还是会拿出来考。    </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>##收获的第一个方法<br>在遇到攻防赛的时候, 首先上防御机下载代码下来，在遇到web被拿分的时候,把那时候的web代码在下载一遍，然后用diff命令对比两个文件夹，看看有哪些地方改变了. </p>
+<pre><code>➜diff TCPDUMP TCPDUMP2   ]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hello World]]></title>
